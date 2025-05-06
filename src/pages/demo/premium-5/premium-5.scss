@@ -1,0 +1,872 @@
+@font-face {
+    font-family: 'Lulo Clean W01 One';
+    src: url('./premium-5-font/FontsFree-Net-Lulo-Clean-W01-One-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.premium-5 {
+    overflow: hidden;
+
+    /* NAVBAR SECTION */
+    #navbar {
+        width: 100%;
+        background-color: transparent; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        
+        .navbar__menu {
+          display: flex;
+          justify-content: center; /* Centre tous les éléments du UL */
+          align-items: center;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          text-transform: uppercase;
+          max-width: 600px;
+          margin: auto;
+        }
+
+        .navbar__slash, .navbar__slash-right {
+          color: #fff;
+          width: 20px;
+          margin: auto;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          /* ajouter ce style lorsque le logo est OK pour éviter le saut de slash */
+        }
+      
+        .navbar__item {
+          margin: 0 20px;
+          color: #fff; /* Couleur du texte */
+          font-size: 16px;
+          cursor: pointer;
+          transition: color 0.3s ease;
+          z-index: 2;
+          width: 20%;
+          margin: auto;
+          text-align: center;
+      
+          &:hover {
+            color: #ec3642; /* Couleur au survol */
+          }
+        }
+      
+        .navbar__logo {
+          opacity: 0;
+          width: 1px;
+          margin: 0;
+          text-align: center;
+          
+          img {
+            height: 100px; /* Ajustez la hauteur de votre logo */
+            width: auto;
+            filter: drop-shadow(1px 1px 5px white);
+          }
+        }
+    }
+    /* NAVBAR RESPONSIVE */
+    @media (max-width: 1024px) { 
+      #navbar {
+        padding-inline-start: 0;
+        .navbar__item {
+          font-size: 12px;
+          margin: 0 4px;
+        }
+      }
+    }
+      
+
+    /* HOME SECTION */
+    .home {
+        width: 100vw;
+        background-image: url('./premium-5-images/gym-bg.webp'); // Assurez-vous de bien spécifier le chemin de votre image de fond
+        background-size: cover;
+        background-position: bottom;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: #fff;
+        position: relative;
+      
+        &__content {
+          text-align: center;
+          z-index: 1;
+        }
+
+        &__logo {
+            margin: 0 40px; /* Espace autour du logo */
+            
+            img {
+              height: 100px; /* Ajustez la hauteur de votre logo */
+              width: auto;
+              margin-bottom: 10px;
+              filter: drop-shadow(1px 1px 5px black);
+              transform: translateY(-50%);
+              padding-inline-end: 15px;
+            }
+          }
+      
+        &__title {
+          font-size: 50px;
+          font-weight: bold;
+          margin: 0;
+          font-family: 'Lulo Clean W01 One', sans-serif;
+          transform: translateY(-50%);
+        }
+      
+        &__animation {
+          position: absolute;
+          bottom: 10px;
+          left: 50%; // Aligne le côté gauche de l'élément au milieu de l'écran
+          transform: translateX(-50%);
+          filter: drop-shadow(1px 1px 1px black);
+        }
+      
+        // Ajout d'un effet de "overlay" sombre sur l'image pour rendre le texte plus lisible
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6); // Couche de semi-transparence
+          z-index: 0;
+        }
+    }
+    /* HOME RESPONSIVE */
+    @media (max-width: 1024px) { 
+      .home {
+        .home__title {
+          font-size: 24px;
+        }
+        .home__logo img {
+          height: 75px;
+          padding-inline-end: 0px;
+        }
+      }
+    }  
+
+    /* ABOUT SECTION */
+    .about {
+        display: flex; // Utilisation de Flexbox pour aligner l'image et le contenu
+        align-items: center; // Centre verticalement les éléments
+        padding: 100px 50px; // Espace autour de la section
+        background: url(./premium-5-images/back.png);
+        background-position: center;
+        background-size: cover;
+        filter: invert(1);
+      
+        &__image {
+          width: 50%;
+          img {
+            width: 100%; // L'image prend toute la largeur de son conteneur
+            height: auto; // Maintient le ratio d'aspect
+            border-radius: 8px; // Ajout d'arrondi aux bords de l'image
+            filter: invert(1);
+            box-shadow: 0px 5px 5px black;
+          }
+        }
+      
+        &__content {
+          flex: 1; // Prend 50% de la largeur
+          padding-left: 20px; // Espace entre l'image et le texte
+          color: #333; // Couleur du texte
+          max-width: 80%;
+          margin: auto;
+          padding: 50px;
+      
+          .about__subtitle {
+            font-size: 18px; // Taille du sous-titre
+            font-weight: 700;
+            margin-bottom: 10px; // Espace sous le sous-titre
+            color: #ffffffa1;
+          }
+      
+          .about__title{
+            font-size: 35px; // Taille du titre
+            margin-bottom: 20px; // Espace sous le titre
+            font-family: 'Lulo Clean W01 One', sans-serif;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: -3.8px;
+          }
+      
+          .about__paragraph {
+            font-size: 15px; // Taille du paragraphe
+            line-height: 1.6; // Espacement des lignes
+            margin-bottom: 15px; // Espace sous chaque paragraphe
+            color: #ffffffd3;
+          }
+        }
+    }
+    /* ABOUT RESPONSIVE */
+    @media (max-width: 1024px) { 
+      .about {
+        flex-direction: column;
+        padding: 50px 20px;
+        .about__image {
+          width: 100%;
+        }
+        .about__content {
+          max-width: 100%;
+          padding: 50px 0;
+        }
+      }
+    }
+
+    /* PRESENTATION SECTION */
+    .presentation {
+        text-align: center; // Centre le texte
+        padding: 50px 20px 100px; // Espace autour de la section
+        background: url(./premium-5-images/back.png);
+        background-position: center;
+        background-size: cover;
+      
+        &__subtitle {
+          font-size: 18px; // Taille du sous-titre
+          color: #ffffffa1;
+          margin-bottom: 10px; // Espace sous le sous-titre
+          text-transform: uppercase;
+        }
+      
+        &__title {
+          font-size: 35px; // Taille du titre
+          margin-bottom: 40px; // Espace sous le titre
+          font-family: 'Lulo Clean W01 One', sans-serif;
+          font-weight: 400;
+          color: #fff;
+          letter-spacing: -3.8px;
+        }
+      
+        &__icons {
+          display: flex; // Flexbox pour les icônes
+          justify-content: center; // Espacement entre les icônes
+          flex-direction: row;
+          gap: 20px;
+          flex-wrap: wrap;
+      
+          .presentation__icon {
+            flex: 1; // Permet à chaque icône de prendre une part égale de l'espace
+            max-width: 350px; // Largeur maximale des icônes
+            min-width: 350px;
+            margin: 20px; // Espace autour de chaque icône
+            text-align: left; // Centre le contenu de chaque icône
+            filter:drop-shadow(0px 5px 5px rgba(255, 255, 255, 0.593));
+
+            .presentation__icon-mask {
+                background-color: #010101; // Couleur de fond noir pour le masque
+                padding: 30px; // Espace à l'intérieur du masque
+                border-radius: 10px 10px 10px 10px; // Coins arrondis pour le masque
+                display: flex; // Utiliser flexbox pour centrer le contenu
+                flex-direction: column; // Aligner les éléments en colonne
+                align-items: center; // Centre horizontalement
+                color: #fff; // Couleur du texte
+                
+                
+                // Utilisation du masque
+                mask-image: url('./premium-5-images/mask-left.png'); // Chemin vers votre image de masque
+                mask-size: cover; // Assurez-vous que le masque couvre la carte
+                mask-repeat: no-repeat; // Ne pas répéter le masque
+                width: 100%; // Largeur complète
+                height: 100%; // Hauteur complète
+                position: relative; // Nécessaire pour le positionnement
+                overflow: hidden; // Pour cacher les débordements
+            }
+      
+            .presentation__icon-image {
+              font-size: 3rem; // Taille de l'icône
+              color: #ec3642; // Couleur de l'icône
+              margin-bottom: 10px; // Espace sous l'icône
+              margin-right: auto;
+            }
+      
+            .presentation__icon-title {
+              font-size: 1.5rem; // Taille du titre de l'icône
+              margin: 10px 0; // Espace au-dessus et au-dessous
+              color: #fff;
+              margin-right: auto
+            }
+      
+            .presentation__icon-paragraph {
+              font-size: 1rem; // Taille du paragraphe
+              color: #ffffffa4;
+              line-height: 1.5; // Espacement des lignes
+              text-align: left;
+            }
+          }
+        }
+    } 
+    /* PRESENTATION RESPONSIVE */
+    @media (max-width: 1024px) { 
+      .presentation {
+        .presentation__title {
+          font-size: 27px;
+        }
+         .presentation__icon {
+          max-width: 300px;
+          min-width: 300px;
+          .presentation__icon-image {
+            width: 100px;
+            margin-top: 10px;
+          }
+          .presentation__icon-mask {
+            padding: 10px 0 0 20px;
+          }
+         }
+      }
+    }
+
+    /* STATS SECTION */
+    .stats {
+      height: 300px; // Hauteur de la section pour l'effet de parallaxe
+      background-image: url('./premium-5-images/parallax.png'); // Remplacez par l'image de votre choix
+      background-size: cover;
+      background-attachment: fixed; // Effet de parallaxe
+      background-position: top;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #010101;
+      text-align: center;
+      padding: 50px 0;
+      position: relative;
+    }
+    .stats::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.504);
+      color: black;
+    }
+    
+    .stats__content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 80%;
+      max-width: 1200px;
+    }
+    
+    .stat {
+      flex: 1;
+      margin: 0 20px;
+      z-index: 2;
+    }
+    
+    .stat__number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: 'Lulo Clean W01 One', sans-serif;
+      letter-spacing: -10px;
+    }
+    
+    .stat__text {
+      font-size: 1.2rem;
+      color: rgba(0, 0, 0, 0.801);
+      line-height: 1.5;
+    }
+    /* STATS RESPONSIVE */
+    @media (max-width: 1024px) { 
+      .stats {
+        height: fit-content;
+        background-attachment: local;
+        .stats__content {
+          flex-direction: column;
+          gap: 30px;
+        }
+      }
+    }
+
+    /* SERVICES SECTION */
+    .services {
+      padding: 50px 20px 650px; // Espace autour de la section
+      background: url(./premium-5-images/back.png);
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+      color: #fff;
+
+      &__header {
+        margin-bottom: 40px;
+      }
+
+      &__subtitle {
+        font-size: 18px; // Taille du sous-titre
+        color: #ffffffa1;
+        margin-bottom: 10px; // Espace sous le sous-titre
+        text-transform: uppercase;
+      }
+
+      &__title {
+        font-size: 35px; // Taille du titre
+        margin-bottom: 40px; // Espace sous le titre
+        font-family: 'Lulo Clean W01 One', sans-serif;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: -3.8px;
+      }
+
+      &__cards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap; // Permet aux cartes de se placer les unes sous les autres en petit écran
+      }
+
+      .service-card {
+        background-color: #010101; // Couleur de fond de la carte
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 375px;
+        min-width: 375px;
+        flex: 1;
+        filter:drop-shadow(0px 2px 5px rgba(255, 255, 255, 0.593));
+        text-align: left;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &__title {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+          color: #fff;
+        }
+
+        &__image {
+          width: 100%;
+          height: 180px;
+          object-fit: cover;
+          object-position: top;
+          margin: 15px 0;
+        }
+
+        &__price {
+          font-size: 40px;
+          font-weight: bold;
+          color: #ec3642;
+          margin-bottom: 15px;
+        }
+
+        &__description {
+          font-size: 1rem;
+          color: #ffffffa4;
+          line-height: 1.5;
+          margin-bottom: 20px;
+          height: 150px;
+        }
+
+        &__button {
+          display: block;
+          background-color: #ec3642;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          text-align: center;
+          cursor: pointer;
+          font-size: 1rem;
+          border-radius: 5px;
+          transition: background-color 0.3s ease;
+          border: solid 1px transparent;
+
+          &:hover {
+            background-color: #fff;
+            color: #b02d37;
+            border: solid 1px #b02d37;
+          }
+        }
+      }
+    }
+    /* SERVICES RESPONSIVE */
+    @media (max-width: 1024px) { 
+      .services {
+        padding-bottom: 650px;
+        .service-card {
+          max-width: 100%;
+          min-width: 100%;
+        }
+        .services__title {
+          font-size: 28px;
+        }
+      }
+    }
+
+    /* TEMOIGNAGES SECTION */
+    .testimonials {
+      background-color: #222; // Fond sombre pour créer un contraste
+      text-align: center;
+      color: #fff;
+      height: 1px;
+      overflow: visible;
+      position: relative;
+
+      .testimonials__container {
+        height: 500px;
+        position: relative;
+        bottom: 600px;
+        padding: 50px 0;
+      }
+
+      &__header {
+        margin-bottom: 40px;
+      }
+
+      &__subtitle {
+        font-size: 18px; // Taille du sous-titre
+        color: #ffffffa1;
+        margin-bottom: 10px; // Espace sous le sous-titre
+        text-transform: uppercase;
+      }
+
+      &__title {
+        font-size: 35px; // Taille du titre
+        margin-bottom: 40px; // Espace sous le titre
+        font-family: 'Lulo Clean W01 One', sans-serif;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: -3.8px;
+      }
+
+      &__carousel {
+        max-width: 50%;
+        margin: 0 auto; // Centre le carrousel
+        position: relative;
+        filter:drop-shadow(0px 2px 5px rgba(255, 255, 255, 0.593));
+
+        .slick-dots {
+          bottom: -30px; // Ajuste la position des points
+          li button:before {
+            color: #fff; // Couleur des points
+            font-size: 12px;
+          }
+          li.slick-active button:before {
+            color: #fff; // Couleur du point actif
+          }
+        }
+
+        .slick-slide {
+          outline: none; // Enlève le contour autour des slides
+        }
+      }
+
+      .testimonial {
+        background-color: #010101; // Fond de chaque témoignage
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border: 1px solid rgba(255, 255, 255, 0.502);
+
+        &__rating {
+          margin: 10px 0;
+          display: flex;
+          justify-content: center;
+        }
+      
+        .star {
+          font-size: 1.5rem;
+          color: #ddd; // Couleur des étoiles non remplies
+          margin: 0 2px;
+      
+          &--filled {
+            color: #FFD700; // Couleur des étoiles remplies (or)
+          }
+        }
+
+        &__message {
+          font-size: 1.2rem;
+          line-height: 1.5;
+          color: #ffffffa4;
+          margin-bottom: 15px;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          min-height: 200px;
+        }
+
+        &__name {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #fff;
+        }
+      }
+    }
+    /* TESTIMONIALS RESPONSIVE */
+    @media (max-width: 1024px) {  
+      .testimonials {
+        .testimonials__container {
+          bottom: 600px;
+          .testimonials__carousel {
+            max-width: 85%;
+          }
+          .testimonials__title {
+            font-size: 30px;
+          }
+        }
+        
+      }   
+    }
+
+    /* CONTACT SECTION */  
+    .contact {
+      padding: 50px 20px 100px;
+      background: url(./premium-5-images/back.png);
+      background-position: center;
+      background-size: cover;
+      filter: invert(1);
+      display: flex;
+      justify-content: center;
+    
+      &__container {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        gap: 50px;
+      }
+    
+      &__left, &__right {
+        flex: 1;
+      }
+    
+      &__title {
+        font-size: 35px; // Taille du titre
+        margin-bottom: 40px; // Espace sous le titre
+        font-family: 'Lulo Clean W01 One', sans-serif;
+        font-weight: 400;
+        color: #FEFEFE;
+        letter-spacing: -3.8px;
+      }
+    
+      &__faq {
+        margin-bottom: 30px;
+    
+        .faq__item {
+          margin-bottom: 20px;
+          cursor: pointer;
+    
+          .faq__question {
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #FEFEFE;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+    
+          .faq__answer {
+            font-size: 16px;
+            padding: 10px;
+            background-color: #010101;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 10px;
+            box-shadow: 0px 0px 5px #ffffff3d;
+          }
+    
+          .chevron {
+            transition: transform 0.3s ease;
+          }
+    
+          .chevron.open {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    
+      &__info {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .contact__phone, .contact__mail  {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          i {
+              background-color: #ec3642;
+              filter: invert(1);
+              border-radius: 50%;
+              height: 70px;
+              width: 70px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 25px;
+              color: #fff;
+              border: solid 1px transparent;
+              transition: background-color 0.3s ease;
+          }
+          i:hover {
+            border: solid 1px #ec3642;
+            color: #ec3642;
+            background-color: #fff;
+          }
+        }
+    
+        p {
+          margin-bottom: 10px;
+          color: #FEFEFE;
+          font-weight: 800;
+          font-size: 22px;
+          line-height: 25px;
+        }
+    
+        span {
+          opacity: 0.5;
+          font-weight: normal;
+          font-size: 15px;
+        }
+      }
+    
+      /* Formulaire de contact */
+      &__form {
+        background-color: #FEFEFE;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+        .form__group {
+          margin-bottom: 20px;
+    
+          label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+          }
+    
+          input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+          }
+          input::placeholder, textarea::placeholder {
+            color: #000;
+          }
+          input:focus-visible, textarea:focus-visible {
+            outline-color: #4FD2C8;
+          }
+    
+          textarea {
+            resize: none;
+          }
+        }
+    
+        .contact__btn {
+          display: inline-block;
+          background-color: #c1313d;
+          opacity: 1;
+          color: #fff;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          border: solid 1px transparent;
+          filter: invert(1);
+    
+          &:hover {
+              border: solid 1px #b02d37;
+              color: #b02d37;
+              background-color: #fff;
+          }
+        }
+      }
+    }
+    /* CONTACT RESPONSIVE */
+    @media (max-width: 1024px) {  
+        .contact__container {
+            flex-direction: column;
+            max-width: 600px;
+            gap: 100px;
+            .contact__title {
+              font-size: 32px;
+            }
+        }   
+    }
+    
+    /* SCROLL-TO-TOP */
+    .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        
+        .scroll-button {
+        /* Reprendre le style des boutons existants */
+        padding: 10px 15px;
+        border-radius: 10px;
+        border: solid 1px white;
+        background-color: #010101;
+        color: #ec3642;
+        font-size: 16px;
+        cursor: pointer;
+        position: relative;
+        transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+            
+            svg {
+                transition: transform 0.3s ease; /* Ajoutez cette ligne pour animer le svg */
+            }
+            
+            &:hover {
+                background-color: #000; /* Exemple de changement d'arrière-plan sur hover */
+                color: #fff; /* Exemple de changement de couleur sur hover */
+            
+                svg {
+                transform: translateY(-3px); /* Élever le SVG de 10px */
+                }
+            }
+        }
+    }
+    .scroll-to-top.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* FOOTER SECTION */
+    .footer {
+      background: url(./premium-5-images/back.png);
+      background-position: center;
+      background-size: cover;
+      color: #fff; /* Couleur du texte */
+      text-align: center; /* Centrer le texte */
+      padding: 20px 0; /* Espacement intérieur */
+      position: relative; /* Position relative pour le positionnement de l'élément */
+
+        .footer-copyright {
+          margin: 0; /* Pas de marge */
+          font-size: 14px; /* Taille de police */
+        }
+      
+        .legal-notice {
+          color: #fff; /* Couleur du lien */
+          text-decoration: underline; /* Pas de soulignement */
+          font-size: 14px; /* Taille de police */
+          transition: color 0.2s; /* Transition pour l'effet au survol */
+      
+          &:hover {
+            color: #b02d37; /* Couleur au survol */
+          }
+        }
+    }    
+}

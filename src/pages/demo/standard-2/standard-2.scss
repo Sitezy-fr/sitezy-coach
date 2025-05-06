@@ -1,0 +1,649 @@
+.standard-2 {
+    /* NAVBAR SECTION */
+    .navbar {
+        display: flex;
+        justify-content: space-between; // Ajustez pour espacer le logo et le menu
+        align-items: center;
+        padding: 0px 30px;
+        box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    
+        &.scrolled {
+            background: url(./standard-2-images/bg-happy.png);
+            background-position: top;
+            background-size: cover; // Appliquer le style de fond lorsque scrolled est vrai
+        }
+    
+        .navbar-logo {
+            img {
+                height: 75px; // Ajustez la taille du logo selon vos besoins
+            }
+        }
+    
+        .navbar-hamburger {
+            display: none; // Cacher par défaut
+            flex-direction: column;
+            border: solid 1px #fff;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            position: relative; // Nécessaire pour le positionnement des lignes
+    
+            &.open {
+                .line {
+                    background: #fff; // Changer la couleur des lignes du hamburger si ouvert
+                }
+    
+                // Transformation pour faire la croix
+                .line1 {
+                    transform: rotate(45deg);
+                    top: 9px; // Ajuste la position de la première ligne
+                }
+    
+                .line2 {
+                    opacity: 0; // Rendre la ligne du milieu invisible
+                }
+    
+                .line3 {
+                    transform: rotate(-45deg);
+                    bottom: 7px; 
+                }
+            }
+    
+            // Styles des lignes du hamburger
+            .line {
+                height: 2px;
+                width: 23px;
+                background-color: #fff; // Couleur des lignes du hamburger
+                margin: 3px 0; // Espacement entre les lignes
+                transition: background-color 0.3s, transform 0.3s, opacity 0.3s; // Ajout de transitions
+                position: relative; // Nécessaire pour les transformations
+            }
+    
+            @media (max-width: 1024px) {
+                display: flex; // Afficher sur mobile
+            }
+        }
+    
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            margin-bottom: 0;
+    
+            li {
+                text-decoration: none;
+                color: #fff;
+                font-weight: 600;
+                padding: 8px 15px;
+                border-radius: 5px;
+                transition: all 0.3s, color 0.3s;
+                cursor: pointer;
+                width: fit-content;
+                border: solid 1px transparent;
+    
+                &:hover {
+                    background-color: transparent;
+                    border: solid 1px #fff;
+                }
+            }
+    
+            // Styles pour le menu hamburger
+            @media (max-width: 1024px) {
+                display: none; // Masquer par défaut sur mobile
+    
+                &.open {
+                    display: flex; // Afficher le menu si ouvert
+                    flex-direction: column; // Orientation verticale
+                    position: absolute; // Position absolue pour le menu
+                    top: 75px; // Juste en dessous de la navbar
+                    left: 0;
+                    right: 0;
+                    background: url(./standard-2-images/bg-happy.png);
+                    background-position: top;
+                    background-size: cover; // Couleur de fond pour le menu
+                    z-index: 1000; // S'assurer que le menu soit au-dessus des autres éléments
+                }
+            }
+        }
+    }
+    
+       
+
+    /* HEADER SECTION */
+    .header {
+        background: url(./standard-2-images/bg-happy.png);
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+    
+        .header-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            
+            .img__container {
+                width: 40%;
+                margin: auto;
+                .image-container {
+                    padding: 15px; /* Espacement de 5px autour de l'image */
+                    background-color: transparent; /* Couleur de fond pour l'espace autour de l'image */
+                    border-radius: 15px; /* Ajoutez ceci si vous souhaitez un effet arrondi cohérent */
+                    border: 1px solid #ffffff37;
+                }
+                .header-image {
+                    width: 100%;
+                    height: auto;
+                    max-height: 600px;
+                    border-radius: 15px;
+                    object-fit: cover;
+                }
+            }
+            
+    
+            .header-text {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 50%;
+                
+                .header-title {
+                    font-size: 60px;
+                    margin-bottom: 0.5rem;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.468));
+                    tex
+                    span {
+                        filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.468));
+                    }
+                }
+    
+                .header-subtitle {
+                    font-size: 1.5rem;
+                    margin-bottom: 2rem;
+                    font-weight: 300;
+                    line-height: 1.5;
+                }
+    
+                .header-btn {
+                    background-color: #fff;
+                    color: #6a11cb;
+                    padding: 0.75rem 1.5rem;
+                    border-radius: 5px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    transition: background-color 0.3s, color 0.3s;
+                    border: solid 1px transparent;
+                    cursor: pointer;
+    
+                    &:hover {
+                        background-color: transparent; // Couleur de fond du bouton
+                        color: #fff; // Couleur au survol
+                        border: solid 1px #fff;
+                    }
+                }
+            }
+        }
+    }    
+    /* HEADER RESPONSIVE */
+    @media (max-width: 1024px) {  
+        .header {
+            padding: 100px 20px;
+            height: fit-content;
+            .header-content {
+                flex-direction: column;
+                .img__container {
+                    width: 80%;
+                    .header-image {
+                        width: 100%;
+                    }
+                }
+                .header-text {
+                    text-align: center;
+                    width: 100%;
+                    padding-top: 30px;
+                    .header-title {
+                        font-size: 45px;
+                        margin: auto;
+                        text-shadow: 1px 1px 1px #0000006e;
+                    }
+                    .header-subtitle {
+                        margin: 2rem 0;
+                    }
+                    .header-btn {
+                        margin: auto;
+                    }
+                }
+            }   
+        }
+        
+    }
+    
+    /* About Section */
+    .about {
+        padding: 60px 20px;
+        background: url(./standard-2-images/white-marbre.png);
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        .about-content {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            width: 100%;
+            gap: 40px;
+            
+            .about-text {
+                flex: 1;
+                h2 {
+                    font-size: 2.5rem;
+                    margin-bottom: 1rem;
+                    color: #6a11cb;
+                    text-shadow: 1px 1px 1px #0000006e;
+                }
+    
+                p {
+                    font-size: 1.25rem;
+                    line-height: 1.6;
+                    color: #333;
+                }
+            }
+    
+            .about-image {
+                flex: 1;
+                display: flex;
+                justify-content: center;
+
+                .image-container {
+                    padding: 15px; /* Espacement de 5px autour de l'image */
+                    background-color: transparent; /* Couleur de fond pour l'espace autour de l'image */
+                    border-radius: 15px; /* Ajoutez ceci si vous souhaitez un effet arrondi cohérent */
+                    border: 1px solid #5b0cb03c;
+                }
+                
+    
+                img {
+                    width: 100%;
+                    max-width: 400px;
+                    height: auto;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    border-radius: 15px;
+                }
+            }
+        }
+    }  
+    /* ABOUT RESPONSIVE */
+    @media (max-width: 1024px) { 
+        .about {
+            .about-content {
+                flex-direction: column;
+                .about-text {
+                    h2 {
+                        font-size: 2.2rem;
+                    }
+                }
+                
+            }
+
+        }
+    }
+    
+    /* CITATION SECTION */
+    .citation {
+        background: url(./standard-2-images/bg-happy.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 300px; // Ajustez la hauteur en fonction de vos besoins
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+    
+        .citation-text {
+           
+            padding: 20px 40px;
+            border-radius: 10px;
+            max-width: 1200px;
+            font-size: 35px;
+            font-style: italic;
+            line-height: 1.5;
+            color: #fff;
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }   
+    /* CITATION RESPONSIVE */
+    @media (max-width: 1024px) { 
+        .citation {
+            .citation-text {
+                padding: 0;
+                font-size: 30px;
+            }
+
+        }
+    } 
+
+    /* SERVICES SECTION */
+    .services {
+        padding: 60px 20px;
+        background: url(./standard-2-images/white-marbre.png);
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+    
+        .services-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #6a11cb;
+            text-shadow: 1px 1px 1px #0000006e;
+        }
+    
+        .services-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; // Pour rendre les cartes responsives
+
+            .card-container {
+                padding: 15px; /* Espacement de 5px autour de l'image */
+                background-color: transparent; /* Couleur de fond pour l'espace autour de l'image */
+                border-radius: 15px; /* Ajoutez ceci si vous souhaitez un effet arrondi cohérent */
+                border: 1px solid #5b0cb03c;
+            }
+            
+    
+            .service-card {
+                background: white;
+                border-radius: 10px;
+                padding: 20px;
+                width: 300px; // Largeur fixe pour chaque carte
+                transition: transform 0.3s;
+                text-align: left;
+                position: relative;
+                height: 400px;
+                
+    
+                .service-icon {
+                    font-size: 3rem; // Taille de l'icône
+                    margin-bottom: 15px;
+                }
+    
+                .service-card-title {
+                    font-size: 1.5rem;
+                    margin-bottom: 10px;
+                    color: #333;
+                }
+    
+                .service-card-description {
+                    font-size: 1rem;
+                    color: #666;
+                    line-height: 1.5;
+                    margin-bottom: 10px; 
+                }
+    
+                .service-card-price {
+                    font-size: 40px;
+                    color: #6a11cb; // Couleur du prix
+                    margin: 10px 0; // Espacement autour du prix
+                    font-weight: bold; // Mettre le prix en gras
+                }
+    
+                .service-card-btn {
+                    background-color: #6a11cb; // Couleur de fond du bouton
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                    position: absolute;
+                    bottom: 20px;
+                    border: solid 1px transparent;
+    
+                    &:hover {
+                        background-color: #fff; // Couleur de fond du bouton
+                        color: #6a11cb; // Couleur au survol
+                        border: solid 1px #6a11cb;
+                    }
+                }
+            }
+        }
+    }  
+    /* SERVICES RESPONSIVE */
+    @media (max-width: 1024px) { 
+        .services {
+            .services-title {
+                font-size: 2.2rem;
+            }
+
+        }
+    }  
+    
+    /* TESTIMONIALS SECTION */
+    .testimonials {
+        padding: 60px 20px;
+        background: url(./standard-2-images/bg-happy.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+    
+        .testimonials-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+    
+        .testimonials-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px; // Espacement entre les cartes
+            flex-wrap: wrap; // Pour rendre les cartes responsives
+
+            .card-container {
+                padding: 15px; /* Espacement de 5px autour de l'image */
+                background-color: transparent; /* Couleur de fond pour l'espace autour de l'image */
+                border-radius: 15px; /* Ajoutez ceci si vous souhaitez un effet arrondi cohérent */
+                border: 1px solid #ffffff37;
+            }
+    
+            .testimonial-card {
+                background: white;
+                border-radius: 15px;
+                padding: 20px;
+                height: 100%;
+                width: 300px; // Largeur fixe pour chaque carte
+                transition: transform 0.3s;
+                text-align: center; // Alignement du texte à gauche
+    
+                .testimonial-image {
+                    border-radius: 50%; // Image ronde
+                    width: 80px; // Taille de l'image
+                    height: 80px; // Taille de l'image
+                    margin-bottom: 15px;
+                    filter: drop-shadow(0px 0px 5px black);
+                }
+    
+                .testimonial-name {
+                    font-size: 1.2rem;
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                    color: #333;
+                }
+    
+                .testimonial-text {
+                    font-size: 1rem;
+                    color: #666;
+                    line-height: 1.5;
+                }
+            }
+        }
+    } 
+    /* TESTIMONIALS RESPONSIVE */
+    @media (max-width: 1024px) { 
+        .testimonials {
+            .testimonials-title {
+                font-size: 2.2rem;
+            }
+
+        }
+    }  
+    
+    /* CONTACT SECTION */
+    .contact {
+        padding: 60px 20px;
+        background: url(./standard-2-images/white-marbre.png);
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+    
+        .contact-title {
+            font-size: 2.5rem;
+            color: #6a11cb;
+            text-shadow: 1px 1px 1px #0000006e;
+        }
+        .contact-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin: 10px auto 40px;
+        }
+    
+        .contact-info {
+            font-size: 1.2rem;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            
+    
+            .contact-item {
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+    
+                i {
+                    background-color: #6a11cb;
+                    border-radius: 50%;
+                    height: 70px;
+                    width: 70px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 25px;
+                    color: white;
+                    margin: auto;
+                    border: solid 1px transparent;
+                    transition: 0.3s background-color ease;
+                }
+                i:hover {
+                    border: solid 1px #6a11cb;
+                    background-color: transparent;
+                    color: #6a11cb;
+                }
+    
+                a {
+                    color: #6a11cb;
+                    text-decoration: none;
+    
+                    &:hover {
+                        text-decoration: underline; // Souligner au survol
+                    }
+                }
+            }
+    
+            .social-links {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 20px; // Espacement entre les liens sociaux
+    
+                li {
+                    display: inline;
+    
+                    a {
+                        color: #6a11cb;
+                        text-decoration: none;
+    
+                        &:hover {
+                            text-decoration: underline; // Souligner au survol
+                        }
+                    }
+                }
+            }
+        }
+    }    
+    /* CONTACT RESPONSIVE */
+    @media (max-width: 1024px) { 
+        .contact {
+            .contact-title {
+                font-size: 2.2rem;
+                margin-bottom: 20px;
+            }
+            .social-links {
+                flex-wrap: wrap;
+            }
+
+        }
+    }
+
+    /* FOOTER SECTION */
+    .footer {
+        background: url(./standard-2-images/white-marbre.png);
+        background-position: bottom;
+        background-size: cover;
+        color: #000; // Couleur du texte
+        text-align: center; // Centrer le texte
+        height: 1px;
+        position: relative; // Pour positionner les éléments
+        bottom: 70px;
+    
+        .footer-content {
+        max-width: 800px; // Largeur maximale pour le contenu
+        margin: 0 auto; // Centrer le contenu
+    
+        .legal-notice {
+            color: #000; // Couleur du lien
+            text-decoration: none; // Pas de soulignement
+            transition: color 0.3s; // Animation de couleur
+            font-size: 14px;
+    
+            &:hover {
+            color: #6a11cb // Couleur au survol
+            }
+        }
+    
+        p {
+            margin-top: 10px; // Espacement au-dessus du texte
+            font-size: 14px; // Taille du texte
+            margin-bottom: 0;
+        }
+        }
+    }  
+}

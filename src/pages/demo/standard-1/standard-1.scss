@@ -1,0 +1,542 @@
+@font-face {
+  font-family: 'Quantum';
+  src: url('../standard-1/standard-1-font/Quantum.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+
+.standard-1 {
+
+  /* NAVBAR SECTION */
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem 2rem; // Ajustez selon vos besoins
+    background-color: rgba(0, 0, 0, 0.054); // Couleur de fond de la navbar
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.074);
+    z-index: 1000;
+  
+    .navbar__logo img {
+      height: 50px; // Ajustez la taille du logo
+      cursor: pointer;
+    }
+  
+    .navbar__menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin-bottom: 0;
+  
+      .navbar__item button {
+        text-decoration: none;
+        color: #fff;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        padding: 10px;
+        border-radius: 5px;
+        border: solid 1px transparent;
+        background-color: transparent;
+  
+        &:hover {
+          color: #ac7f4e; 
+          background-color: white;
+          border: 1px solid #ac7f4e;
+        }
+      }
+    }
+  }  
+  #navbar.navbar--scrolled {
+    background: rgba(0, 0, 0, 0.5);
+  }
+  /* NAVBAR RESPONSIVE */
+  @media (max-width: 1024px) { 
+    #navbar {
+      padding: 0;
+      .navbar__menu {
+        gap: 0px;
+        padding-left: 0;
+      }
+    }
+  }
+
+  /* HEADER SECTION */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background: url('./standard-1-images/bg-corde.png') no-repeat center center/cover;
+  
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 5%;
+      color: white;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      padding-block-end: 100px;
+    }
+  
+    &__title {
+      font-size: 4rem;
+      font-family: 'Quantum', sans-serif; // Utilisation de la nouvelle police
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 5px black;
+    }
+  
+    &__cta {
+      padding: 0.75rem 1.5rem;
+      background-color: #ac7f4e;
+      color: white;
+      border: solid 1px transparent;
+      border-radius: 5px;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        color: #ac7f4e; 
+        background-color: white;
+        border: solid 1px #ac7f4e;
+      }
+    }
+  }  
+  /* HEADER RESPONSIVE */
+  @media (max-width: 1024px) { 
+    .header {
+      .header__title {
+        font-size: 3rem;
+      }
+    }
+  }
+  
+  /* ABOUT SECTION */
+  .about {
+    padding: 50px 0px 50px;
+    background-color: whitesmoke;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+      background-color: #fff;
+      padding: 50px 20px 30px;
+      border-radius: 10px;
+      width: fit-content;
+      margin: auto;
+      max-width: 1000px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &__image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 50%;
+    }
+  
+    &__image-wrapper {
+      position: relative;
+    }
+  
+    &__image {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%; // Rend l'image circulaire
+      object-fit: cover; // Ajuste l'image pour qu'elle soit bien cadrée
+      position: relative;
+      border: 6px solid white;
+      z-index: 2; // Assure que l'image soit au-dessus
+    }
+  
+    &__small-circle {
+      width: 425px; // Taille du petit cercle
+      height: 425px;
+      border-radius: 50%; // Rend le cercle circulaire
+      border: 2px solid white;
+      background-color: #ac7f4e; // Couleur du petit cercle
+      position: absolute;
+      bottom: 10%; // Ajustez pour la position verticale
+      left: 18%; // Ajustez pour la position horizontale
+      z-index: 1; // Assure que le petit cercle soit en dessous
+    }
+  
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    &__title {
+      font-size: 2rem;
+      color: #333;
+      width: 100%;
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+    &__description {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      color: #555;
+      max-width: 500px;
+      margin: auto;
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+    &__icons {
+      display: flex;
+      gap: 4rem; // Espacement entre les icônes
+      width: 100%;
+      margin-top: 50px;
+    }
+  
+    &__icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.5rem;
+      color: #333;
+  
+      span {
+        margin-top: 0.5rem;
+        font-size: 0.875rem;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+      }
+  
+      svg {
+        font-size: 4rem; // Taille de l'icône
+        color: #ac7f4e; // Couleur de l'icône
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.524));
+      }
+    }
+  }  
+  /* ABOUT RESPONSIVE */
+  @media (max-width: 1024px) { 
+    .about {
+      padding: 1rem 1rem 50px;
+      .about__container {
+        flex-direction: column;
+        gap: 30px;
+        .about__image-container {
+          width: 75%;
+        }
+        .about__image {
+          width: 100%;
+          height: 100%;
+        }
+        .about__small-circle {
+          width: 100%;
+          height: 100%;
+        }
+        .about__icons {
+          gap: 2rem;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  /* SERVICES SECTION */
+  .services {
+    padding: 3rem;
+    background-color: whitesmoke;
+    text-align: center;
+  
+    &__title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+    &__cards {
+      display: flex;
+      justify-content: center;
+      gap: 2rem; // Espacement entre les cartes
+      flex-wrap: wrap; // Permet aux cartes de s'adapter sur des écrans plus petits
+    }
+  
+    &__card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      width: 310px;
+      text-align: left;
+      transition: transform 0.3s ease;
+  
+      &-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+      }
+  
+      &-price {
+        font-size: 30px;
+        margin-bottom: 1rem;
+        color: #ac7f4e; // Couleur pour le prix
+        font-weight: bold;
+        font-family: 'Montserrat', sans-serif;
+      }
+  
+      &-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        color: #555;
+        font-family: 'Montserrat', sans-serif;
+      }
+  
+      &-cta {
+        background-color: #ac7f4e; // Couleur du bouton CTA
+        color: #fff;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+        border: solid 1px white;
+        font-family: 'Montserrat', sans-serif;
+  
+        &:hover {
+          &:hover {
+            color: #ac7f4e; 
+            background-color: white;
+            border: solid 1px #ac7f4e;
+          }
+        }
+      }
+    }
+  }  
+  /* SERVICES RESPONSIVE */
+  @media (max-width: 1024px) {
+    .services {
+      padding: 50px 1rem 50px;
+    }
+  }
+
+  /* TESTIMONIALS SECTION */
+  .testimonials-carousel {
+    padding: 3rem;
+    background-color: whitesmoke;
+    text-align: center;
+  
+    &__title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+    .slick-slider {
+      max-width: 1000px; // Ajuste la largeur pour que le carrousel reste centré
+      margin: 0 auto; // Centre le carrousel
+    }
+  
+    .testimonials-carousel__card{
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+      border-right: solid 1px #00000045;
+      border-bottom: solid 1px #00000045;
+  
+      .testimonials-carousel__feedback {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+        color: #333;
+        font-style: italic;
+        height: 100px;
+        font-family: 'Montserrat', sans-serif;
+      }
+  
+      .testimonials-carousel__rating {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+  
+      .testimonials-carousel__star {
+        color: #FFD700; // Couleur des étoiles
+        font-size: 1.25rem;
+        margin: 0 2px;
+      }
+  
+      .testimonials-carousel__client {
+        font-size: 1.125rem;
+        font-weight: bold;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+      }
+    }
+  
+    .slick-dots {
+      bottom: -50px; // Ajuste la position des dots
+      li button:before {
+        color: #ac7f4e; // Couleur des dots
+        font-size: 10px;
+      }
+  
+      li.slick-active button:before {
+        color: #8a623c; // Couleur des dots actifs
+      }
+    }
+  }  
+  /* TESTIMONIALS RESPONSIVE */
+  @media (max-width: 1024px) { 
+    .testimonials-carousel {
+      padding: 50px 1rem 50px;
+    }
+  }
+
+
+  /* CONTACT SECTION */
+  .contact {
+    padding: 3rem;
+    background-color: whitesmoke;
+    color: #333;
+
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      padding: 3rem;
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    &__left {
+      flex: 1;
+      padding-right: 2rem;
+    }
+  
+    &__title {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+    &__description {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+      font-family: 'Montserrat', sans-serif;
+    }
+  
+    &__right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  
+    }
+  
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.25rem;
+      transition: color 0.3s;
+      width: fit-content;
+  
+      &:hover .contact__info {
+        color: #8a623c;
+      }
+    }
+  
+    &__icon {
+      font-size: 1.5rem;
+      color: #8a623c;
+    }
+  
+    &__info {
+      text-decoration: none;
+      color: #333;
+      transition: color 0.3s;
+      font-family: 'Montserrat', sans-serif;
+  
+      &:hover {
+        color: #8a623c;
+      }
+    }
+  }  
+  /* CONTACT RESPONSIVE */
+  @media (max-width: 1024px) { 
+    .contact {
+      padding: 50px 1rem 1rem;
+      .contact__container {
+        padding: 2rem;
+      }
+      .contact__left {
+        padding-right: 0;
+      }
+      .contact__description {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+      .contact__info {
+        font-size: 17px;
+      }
+    }
+  }
+
+  /* FOOTER SECTION */
+  .footer {
+    background-color: whitesmoke;
+    background-position: center;
+    background-size: cover;
+    color: #333; /* Couleur du texte */
+    text-align: center; /* Centrer le texte */
+    position: relative; 
+    max-width: 1000px;
+    margin: auto;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &__container {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    
+    &__copyright {
+      margin: 0; /* Pas de marge */
+      font-size: 14px; /* Taille de police */
+      font-family: 'Raleway', sans-serif;
+    }
+  
+    &__legal-notice {
+      color: #333;
+      text-decoration: underline; /* Pas de soulignement */
+      font-size: 14px; /* Taille de police */
+      transition: color 0.3s; /* Transition pour l'effet au survol */
+      font-family: 'Raleway', sans-serif;
+  
+      &:hover {
+        color: #8a623c; /* Couleur au survol */
+      }
+    }
+  }
+}

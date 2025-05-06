@@ -1,0 +1,1290 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+#premium-1 {
+
+  /* NAVBAR */
+  #navbar {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    position: relative;
+    z-index: 11;
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #000;
+        color: white;
+        height: 100vh;
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 20px;
+        transform: translateX(0);
+        transition: transform 0.3s ease-in-out;
+        
+        .logo {
+            img {
+                width: 150px;
+                height: auto;
+                margin-bottom: 40px;
+            }
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            li {
+                width: 100%;
+                text-align: center;
+                margin: 20px 0;
+
+                a {
+                  text-decoration: none;
+                  color: white;
+                  font-size: 18px;
+                  display: block;
+                  padding: 10px 0;
+                  width: fit-content;
+                  margin: auto;
+                  position: relative;
+                  margin-inline-start: 50px;
+                  cursor: pointer;
+                }
+                a::before {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 1px;
+                  border-radius: 4px;
+                  background-color: white;
+                  bottom: 10px;
+                  left: 0;
+                  transform-origin: right;
+                  transform: scaleX(0);
+                  transition: transform .3s ease-in-out;
+                }
+                
+                a:hover::before {
+                  transform-origin: left;
+                  transform: scaleX(1);
+                }
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+        margin-left: auto;
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+    }
+  }
+  /* NAVBAR RESPONSIVE */
+  @media (max-width: 1024px) {
+    #navbar {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      .sidebar {
+          width: 100%;
+          height: 100px;
+          flex-direction: row;
+          position: relative;
+          .logo {
+            img {
+              width: 100px;
+              vertical-align: baseline;
+              margin-bottom: 0;
+              margin-inline-start: 30px;
+            }
+          }
+          .menu {
+            display: none;
+            &.open {
+              display: flex;
+              background-color: #000;
+              position: absolute;
+              top: 80px;
+              width: 100vw;
+              transform: translateY(20px);
+          }
+        }
+      }
+      .hamburger {
+          display: flex;
+          flex-direction: column;
+          margin-inline-end: 30px;
+          align-items: center;
+          height: 100%;
+            &.open {
+              .bar:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 4px);
+              }
+        
+              .bar:nth-child(2) {
+                transform: rotate(-45deg) translate(5px, -4px);
+              }
+          }
+      }
+    }
+  }
+
+
+  /* HEADER */
+  #header {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 100px;
+      padding: 50px 20px;
+      padding-inline-start: 250px;
+      margin: auto;
+      .left-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        h1 {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 800;
+          text-transform: uppercase;
+          line-height: 63px;
+          letter-spacing: 1px;
+          font-size: 59px;
+          color: black;
+          margin-bottom: 0;
+        }
+        p {
+          color: rgb(123, 123, 123);
+          line-height: 27px;
+          font-weight: 300;
+          font-size: 18px;
+        }
+        .cta-button {
+          padding: 10px 20px;
+          background-color: #000;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+          
+          /* Pas de bordure directement sur le bouton */
+          border: none;
+        
+          /* Transition fluide pour l'effet de bordure */
+          transition: transform 0.3s ease;
+        }
+        
+        .cta-button::before {
+          content: '';
+          position: absolute;
+          top: 6px;
+          left: 9px;
+          width: 99%;
+          height: 99%;
+
+          transition: all 0.3s ease;
+          
+          /* Bordure initiale en bas et à droite */
+          border-bottom: 2px solid #000;
+          border-right: 2px solid #000;
+          border-top: 2px solid transparent;
+          border-left: 2px solid transparent;
+        }
+        
+        .cta-button:hover::before {
+          /* Lors du hover, déplacer la bordure vers le haut et la gauche */
+          top: -5px;
+          left: -5px;
+        
+          /* Modifier la bordure pour qu'elle soit en haut et à gauche uniquement */
+          border-top: 2px solid #000;
+          border-left: 2px solid #000;
+          border-bottom: 2px solid transparent;
+          border-right: 2px solid transparent;
+        
+        }
+        
+      }
+      .right-section {
+        flex: 1;
+        position: relative;
+        .image-box {
+          background-image: url('./premium-1-images/lea.jpg');
+          background-size: cover;
+          background-position: center;
+          width: 100%;
+          max-width: 500px; 
+          height: auto;
+          aspect-ratio: 3 / 4; /* Rapport hauteur/largeur du format portrait */
+          display: flex;
+          flex-direction: column;
+          align-items: end;
+          justify-content: end;
+          gap: 20px;
+          color: white;
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin: 0 auto;
+          p {
+            background-color: black;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+          }
+          a {
+            color: white;
+            i {
+              background-color: black;
+              padding: 5px 10px;
+            }
+          }
+          a:hover {
+            filter: brightness(0.8);
+          }
+      }
+      }
+    }
+  }
+
+  /* HEADER RESPONSIVE */
+  @media (max-width: 1024px) {
+    #header {
+      margin-top: 100px;
+      .container {
+      padding-inline-start: 0px;
+      flex-direction: column-reverse;
+      padding-right: 0;
+      gap: 50px;
+        .left-section {
+          align-items: center;
+          gap: 0px;
+          h1 {
+            font-size: 35px;
+          }
+          p {
+            text-align: center;
+          }
+          .cta-button {
+            width: 50%;
+            margin-top: 10px;
+            min-width: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  /* GALLERY */
+  .image-gallery {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px auto;
+    padding-inline-start: 250px;
+  
+    .image-item {
+      width: 25%;
+      position: relative;
+      overflow: hidden;
+  
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease-in-out;
+      }
+  
+      .overlay {
+        position: absolute; 
+        top: 50%; 
+        left: 0; 
+        width: 0; 
+        height: 50px; 
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: width 0.5s ease, opacity 0.5s ease; 
+        overflow: hidden; 
+        margin: 0 auto;
+        text-align: center;
+        z-index: 10;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+  
+      &:hover {
+        img {
+          transform: scale(1.05); /* Zoom de 10% sur l'image au survol */
+        }
+  
+        .overlay {
+          width: calc(100% - 50px); /* Développe l'overlay à sa largeur totale, en tenant compte du padding */
+        }
+      }
+      
+    }
+  }
+  /* GALERY RESPONSIVE */
+  @media (max-width: 1024px) {
+    .image-gallery {
+      padding-inline-start: 0px;
+      flex-direction: column;
+      .image-item {
+        width: 100%;
+      }
+    }
+  }
+  
+   /* PARALLAX */
+   .parallax-section {
+    background-image: url('./premium-1-images/parallax.jpg'); /* Remplacez par le chemin de votre image de fond */
+    background-repeat: no-repeat;
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    background-attachment: fixed; /* Effet parallax */
+    background-size: cover;
+    background-position-x: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline-start: 250px;
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around; /* Espace entre les éléments */
+      width: 100%;
+      max-width: 1200px; /* Limite la largeur pour un meilleur rendu */
+      color: white; /* Couleur du texte */
+      text-align: center;
+
+      .stat-item {
+        flex: 1; /* Chaque stat prend une part égale de l'espace */
+        margin: 0 10px; /* Marge de chaque côté */
+        
+        h2 {
+          font-size: 48px; /* Taille du chiffre */
+          margin: 0; /* Supprime la marge par défaut */
+          transition: all 0.5s ease;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 800;
+        }
+
+        p {
+          font-size: 20px; /* Taille du texte */
+          margin: 5px 0 0 0; /* Marge pour le texte */
+        }
+      }
+    }
+  }
+
+  /* PARALLAX RESPONSIVE */
+  @media (max-width: 1024px) {
+    .parallax-section {
+      padding-inline-start: 0px;
+      background-attachment: local;
+      .stats-container {
+        flex-direction: column;
+        gap: 20px;
+        .stat-item {
+          p {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  /* EXPERTISE */
+  #expertise-section {
+  padding: 50px 20px;
+  padding-inline-start: 250px;
+  margin: 80px 20px 20px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Alignement des éléments */
+    
+    .left-section {
+      flex: 1; /* Prend la moitié de l'espace */
+      margin-right: 20px;
+
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        font-size: 55px;
+        color: #000;
+        text-transform: uppercase;
+      }
+
+      p {
+        margin: 20px 0;
+        color: #666;
+        font-size: 16px;
+      }
+
+      .cta-button {
+          padding: 10px 20px;
+          background-color: #000;
+          color: white;
+          font-size: 16px;
+          cursor: pointer;
+          position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+          transition: transform 0.3s ease;
+          /* Pas de bordure directement sur le bouton */
+          border: none;
+        }
+        
+        .cta-button::before {
+          content: '';
+          position: absolute;
+          top: 6px;
+          left: 7px;
+          width: 99%;
+          height: 99%;
+          transition: all 0.3s ease;
+          
+          /* Bordure initiale en bas et à droite */
+          border-bottom: 2px solid #000;
+          border-right: 2px solid #000;
+          border-top: 2px solid transparent;
+          border-left: 2px solid transparent;
+        }
+        
+        .cta-button:hover::before {
+          /* Lors du hover, déplacer la bordure vers le haut et la gauche */
+          top: -5px;
+          left: -5px;
+        
+          /* Modifier la bordure pour qu'elle soit en haut et à gauche uniquement */
+          border-top: 2px solid #000;
+          border-left: 2px solid #000;
+          border-bottom: 2px solid transparent;
+          border-right: 2px solid transparent;
+        
+        }
+    }
+
+    .right-section {
+      flex: 1; /* Prend la moitié de l'espace */
+      display: flex;
+      flex-direction: column; /* Pour aligner les barres verticalement */
+      
+      .progres {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px; /* Espacement entre les barres */
+        
+        .bar {
+          background-color: #e0e0e0; /* Couleur de fond de la barre */
+          border-radius: 5px;
+          height: 30px; /* Hauteur de la barre */
+          overflow: hidden; /* Pour masquer le débordement */
+          .progross {
+            height: 100%;
+            transition: width 0.5s ease; /* Transition fluide pour la progression */
+          }
+        }
+        .label {
+          display: flex;
+          justify-content: space-between; /* Pour espacer le texte et le pourcentage */
+          margin-top: 5px; /* Espacement au-dessus du texte */
+          font-size: 14px;
+          p {
+            margin-bottom: 0;
+            position: relative;
+            top: 35px;
+            left: 10px;
+            color: white;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+          }
+          span {
+            font-weight: 900;
+            font-size: 20px;
+          }
+        }
+      }
+      .bar1, .bar3 {
+        .progross {
+          background-color: rgb(175, 175, 175); /* Couleur des barres 1 et 3 */
+        }
+      }
+
+      .bar2 {
+        .progross {
+          background-color: black; /* Couleur de la barre 2 */
+        }
+      }
+    }
+  }
+}
+/* EXPERTISE RESPONSIVE */
+@media (max-width: 1024px) {
+  #expertise-section {
+    padding-inline-start: 0px;
+    padding: 50px 20px;
+    margin: 0;
+    .container {
+      flex-direction: column;
+      padding: 0;
+      .left-section {
+        margin-right: 0;
+        text-align: center;
+        h2 {
+          font-size: 35px;
+        }
+      }
+      .right-section {
+        margin: auto;
+      }
+    }
+  }
+}
+
+  /* SKILLS GALLERY */
+  #skills-gallery {
+    padding-inline-start: 250px;
+
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap; /* Permet de faire passer les images à la ligne */
+      justify-content: space-between; /* Espace entre les éléments */
+
+      .skills-item {
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease; /* Transition pour le zoom de l'image */
+
+        img {
+          width: 100%; 
+          height: auto; 
+          transition: transform 0.3s ease; /* Transition pour le zoom */
+          filter: brightness(0.75);
+        }
+
+        h3, p {
+          position: absolute; 
+          left: 50%; 
+          transform: translateX(-50%); 
+          text-align: center; 
+          color: white; 
+          margin: 0; 
+          padding: 10px; 
+          z-index: 1; 
+          transition: background-color 0.3s ease, width 0.3s ease; /* Transition pour le fond */
+        }
+
+        h3 {
+          top: 20%; 
+          font-size: 40px; 
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 800;
+          background-color: transparent; /* Fond transparent par défaut */
+          padding: 5px 10px; /* Ajoute un padding pour le fond */
+
+        }
+
+        p {
+          top: 40%;
+          font-size: 16px; 
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+          width: 100%;
+        }
+
+        /* Effets au survol */
+        &:hover {
+          img {
+            transform: scale(1.05); /* Zoom sur l'image */
+          }
+
+          h3 {
+            background-color: black; /* Fond noir lors du survol */
+            width: auto; /* Largeur automatique pour le fond */
+            padding-left: 15px; /* Ajoute un peu d'espace pour le texte */
+            padding-right: 15px; /* Ajoute un peu d'espace pour le texte */
+          }
+        }
+      }
+    }
+  }
+  /* SKILLS RESPONSIVE */
+  @media (max-width: 1024px) {
+    #skills-gallery {
+      padding-inline-start: 0px;
+      .skills-container {
+        .skills-item {
+            width: 100%;
+            p {
+              width: 100%;
+            }
+            h3 {
+              top: 15%;
+             }
+        }
+      }
+    }
+  }
+
+
+  /* SERVICE SECTION */
+  #services-section {
+    margin: 40px 10px;
+    text-align: center;
+    padding-inline-start: 250px;
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 55px;
+      color: #000;
+      text-transform: uppercase;
+    }
+    .sub-title {
+      color: #555555;
+      max-width: 500px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+
+    .services-container {
+      display: flex;
+      gap: 10px;
+      color: white;
+      justify-content: center;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  .service-card {
+    background: linear-gradient(to bottom, #000000, #555555);
+    border-radius: 10px;
+    padding: 8px 8px 40px 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    padding-top: 10px;
+    max-width: 400px;
+    justify-content: center;
+    
+
+    img {
+      max-width: 100%;
+      border-radius: 10px 10px 0px 0px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin: 30px 0 15px;
+    }
+
+    .description {
+      font-size: 1rem;
+      color: rgba(245, 245, 245, 0.801);
+      margin-bottom: 20px;
+      height: 80px;
+      text-align: center;
+    }
+    .service-price {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 50px;
+      text-shadow: 1px 1px 10px black;
+      color: white; // Une couleur pour que le prix soit visible
+      margin-bottom: 15px; // Ajoutez un espacement sous le prix
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+      
+      /* Pas de bordure directement sur le bouton */
+      border: none;
+    
+      /* Transition fluide pour l'effet de bordure */
+      transition: transform 0.3s ease;
+    }
+    
+    button::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 9px;
+      width: 99%;
+      height: 99%;
+
+      transition: all 0.3s ease;
+      
+      /* Bordure initiale en bas et à droite */
+      border-bottom: 2px solid #fff;
+      border-right: 2px solid #fff;
+      border-top: 2px solid transparent;
+      border-left: 2px solid transparent;
+    }
+    
+    button:hover::before {
+      /* Lors du hover, déplacer la bordure vers le haut et la gauche */
+      top: -5px;
+      left: -5px;
+    
+      /* Modifier la bordure pour qu'elle soit en haut et à gauche uniquement */
+      border-top: 2px solid #fff;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid transparent;
+      border-right: 2px solid transparent;
+    
+    }
+  }
+  /* SERVICES RESPONSIVE */
+  @media (max-width: 1024px) {
+    #services-section {
+      padding-inline-start: 0px;
+      margin: 0;
+      padding: 50px 20px;
+      .services-container {
+        .service-card {
+          padding-bottom: 40px;
+          .description {
+            text-align: center;
+          }
+        }
+      }
+      h2 {
+        font-size: 35px;
+      }
+    }
+  }
+
+
+  /* TESTIMONIAL */
+  #testimonials-carousel {
+    text-align: center;
+    padding-inline-start: 250px;
+    background: linear-gradient(45deg, rgb(175, 175, 175) 30%, whitesmoke 40%, whitesmoke 70%, rgb(175, 175, 175) 80%);
+    .title {
+      background: white;
+    }
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+        line-height: 63px;
+        letter-spacing: 1px;
+        font-size: 59px;
+        color: black;
+        padding: 50px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    .sub-title {
+      color: #555555;
+      margin: auto;
+      padding-bottom: 200px;
+      max-width: 500px;
+    }
+
+    .testimonial-card {
+        background: linear-gradient(to top, #000000, #555555);
+        border-radius: 10px;
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 500px;
+        position: relative;
+        bottom: 150px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+        .testimonial-photo {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            filter: drop-shadow(1px 1px 5px black);
+        }
+
+        .testimonial-content {
+            color: white;
+
+            h3 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+            .date {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+                color: whitesmoke;
+            }
+
+            .testimonial {
+                font-size: 1rem;
+                font-style: italic;
+                width: 100%;
+                margin: 30px auto;
+                height: 75px;
+            }
+        }
+    }
+
+    .carousel-controls {
+        position: relative;
+        margin-top: 20px;
+
+        .arrow {
+            padding: 0px 5px;
+            margin: 0 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: transparent;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 20px; // Taille de la flèche
+
+            &:hover {
+                background-color: #bbb;
+            }
+        }
+    }
+
+    .dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        align-items: center;
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            border-radius: 50%;
+            background-color: #bbb; // Couleur des points inactifs
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &.active {
+                background-color: white; // Couleur du point actif
+            }
+
+            &:hover {
+                background-color: #888; // Couleur lors du survol
+            }
+        }
+    }
+  }
+  /* TESTIMONIAL RESPONSIVE */
+  @media (max-width: 1024px) {
+    #testimonials-carousel {
+      padding-inline-start: 0px;
+      h2 {
+        font-size: 34px;
+        padding: 50px 0 0;
+      }
+      .testimonial-card {
+        width: 90%;
+        .testimonial-content {
+          .testimonial{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+
+  /* CONTACT SECTION */
+  #contact-section {
+    padding: 50px 20px;
+    padding-inline-start: 250px;
+    margin: 80px 20px;
+
+    .container {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: flex-start; 
+
+      .left-section {
+        flex: 1; /* Prend 50% de l'espace */
+        margin-right: 20px; /* Espacement à droite */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        h2 {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 800;
+          font-size: 55px;
+          color: #000;
+        }
+
+        p {
+          margin: 10px 0;
+          color: #666;
+          font-size: 16px;
+        }
+
+        address {
+          font-style: normal; /* Pour que l'adresse soit normalisée */
+          color: #666;
+
+          a {
+            color: #666;
+            text-decoration: underline;
+
+            &:hover {
+              color: #333;
+            }
+          }
+        }
+      }
+
+      .right-section {
+        flex: 1; /* Prend 50% de l'espace */
+        display: flex;
+        flex-direction: column; /* Pour aligner les éléments du formulaire verticalement */
+
+        form {
+          display: flex;
+          flex-direction: column; /* Aligne les éléments du formulaire verticalement */
+
+          .form-group {
+            margin-bottom: 15px; /* Espacement entre les groupes */
+            
+            label {
+              margin-bottom: 5px; /* Espacement au-dessus du label */
+              font-weight: bold; /* Met en gras le label */
+              color: #333;
+            }
+
+            input,
+            textarea {
+              width: 100%; /* Prend toute la largeur disponible */
+              padding: 10px; /* Espacement interne */
+              border: 1px solid #ccc; /* Bordure */
+              border-radius: 4px; /* Coins arrondis */
+              font-size: 16px;
+
+              &:focus {
+                border-color: #4CAF50; /* Changer la couleur de la bordure au focus */
+                outline: none; /* Enlever le contour par défaut */
+              }
+            }
+          }
+
+          button {
+            padding: 10px 20px;
+            background-color: #000;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative; /* Nécessaire pour le positionnement du pseudo-élément */
+            transition: transform 0.3s ease;
+            /* Pas de bordure directement sur le bouton */
+            border: none;
+          }
+          
+          button::before {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 9px;
+            width: 99%;
+            height: 99%;
+            transition: all 0.3s ease;
+              
+            /* Bordure initiale en bas et à droite */
+            border-bottom: 2px solid #000;
+            border-right: 2px solid #000;
+            border-top: 2px solid transparent;
+            border-left: 2px solid transparent;
+          }
+          
+          button:hover::before {
+            /* Lors du hover, déplacer la bordure vers le haut et la gauche */
+            top: -5px;
+            left: -5px;
+          
+            /* Modifier la bordure pour qu'elle soit en haut et à gauche uniquement */
+            border-top: 2px solid #000;
+            border-left: 2px solid #000;
+            border-bottom: 2px solid transparent;
+            border-right: 2px solid transparent;
+          }
+        }
+      }
+    }
+  }
+  /* CONTACT RESPONSIVE */
+  @media (max-width: 1024px) {
+    #contact-section {
+      padding-inline-start: 0px;
+      padding: 50px 0px;
+      margin: 0;
+      .container {
+        flex-direction: column;
+        align-items: center;
+        .left-section {
+          margin-right: 0;
+          align-items: center;
+          text-align: center;
+          h2 {
+            font-size: 35px;
+            text-wrap: pretty;
+          }
+        }
+      }
+    }
+  }
+
+  /* INSTAGRAM CAROUSEL */
+  #instagram-carousel {
+    text-align: center; /* Centrer le texte */
+    background: linear-gradient(45deg, rgb(175, 175, 175) 30%, whitesmoke 40%, whitesmoke 70%, rgb(175, 175, 175) 80%);
+    padding-inline-start: 250px;
+  }
+  #instagram-carousel .image-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #instagram-carousel .sub-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 0px;
+    padding: 20px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    width: fit-content;
+    margin: auto;
+  }
+  #instagram-carousel a:hover {
+    text-decoration: underline;
+  }
+
+  #instagram-carousel .carousel-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .image-container:hover .carousel-image {
+    transform: scale(1.05); /* Zoom de l'image au survol */
+  }
+  .icon-container {
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .image-container:hover .icon-container {
+    opacity: 1;
+  }
+  .hover-icon {
+    position: relative;
+    top: 95%;
+    left: -5%;
+    transform: rotate(45deg) translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 100;
+    color: white;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    filter: drop-shadow(1px 1px 5px black);
+  }
+
+  .image-container:hover .hover-icon {
+    opacity: 1; /* Icône visible au survol */
+    transform: rotate(45deg) translate(-60%, -70%);
+  }
+
+  #instagram-carousel i {
+    font-size: 25px;
+    margin-right: 10px;
+    vertical-align: sub;
+  }
+
+  #instagram-carousel a {
+    color: white;
+  }
+
+  #instagram-carousel .slick-next , #instagram-carousel .slick-prev  {
+    right: 0;
+    left: 0;
+    opacity: 0;
+    cursor: auto;
+  }
+
+  .swiper-container {
+    width: 100%;
+    max-width: 100px; /* Largeur maximale */
+    margin: 0 auto; /* Centrer le carrousel */
+  }
+
+  .swiper-slide {
+    display: flex; /* Centrer le contenu de chaque diapositive */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slick-track {
+    top: 10px;
+  }
+
+  .swiper-slide img {
+    width: 100%; /* Prendre toute la largeur de la diapositive */
+    border-radius: 10px; /* Coins arrondis */
+  }
+  #instagram-carousel .slick-slide img:focus-visible {
+    text-decoration: none;
+    border: none;
+  }
+  /* INSTAGRAM RESPONSIVE */
+  @media (max-width: 1024px) {
+    #instagram-carousel {
+      padding-inline-start: 0px;
+    }
+  }
+
+
+  /* SCROLL-TO-TOP */
+  .scroll-to-top {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    
+    .scroll-button {
+      /* Reprendre le style des boutons existants */
+      padding: 10px 15px;
+      background-color: #000;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 99%;
+        height: 99%;
+        border-bottom: 2px solid #000;
+        border-right: 2px solid #000;
+        border-top: 2px solid transparent;
+        border-left: 2px solid transparent;
+        transition: all 0.3s ease;
+      }
+  
+      &:hover::before {
+        top: -5px;
+        left: -5px;
+        border-top: 2px solid #000;
+        border-left: 2px solid #000;
+        border-bottom: 2px solid transparent;
+        border-right: 2px solid transparent;
+
+      }
+    }
+  }
+  .scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /*  FOOTER SECTION */
+  .footer {
+    background: linear-gradient(45deg, rgb(175, 175, 175) 30%, whitesmoke 40%, whitesmoke 70%, rgb(175, 175, 175) 80%);
+    color: #000; // Couleur du texte
+    text-align: center; // Centrer le texte
+    padding: 10px 0;
+    padding-inline-start: 250px;
+    position: relative; // Pour positionner les éléments
+  
+    .footer-content {
+      max-width: 800px; // Largeur maximale pour le contenu
+      margin: 0 auto; // Centrer le contenu
+      font-weight: 500;
+  
+      .legal-notice {
+        color: #000; // Couleur du lien
+        text-decoration: none; // Pas de soulignement
+        transition: color 0.3s; // Animation de couleur
+        font-size: 14px;
+  
+        &:hover {
+          color: #00000078; // Couleur au survol
+        }
+      }
+  
+      p {
+        margin-top: 10px; // Espacement au-dessus du texte
+        font-size: 14px; // Taille du texte
+        margin-bottom: 0;
+      }
+    }
+  }  
+  /* FOOTER RESPONSIVE */
+  @media (max-width: 1024px) {
+    .footer {
+      padding-inline-start: 0px;
+    }
+  }
+}
