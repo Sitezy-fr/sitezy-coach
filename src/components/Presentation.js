@@ -11,7 +11,7 @@ const Presentation = () => {
         {
             title: "Tarifs très avantageux",
             image: euro, // Remplacez par l'URL de votre illustration
-            description: "Nos offres débutent à partir de 299€ contre 2000€ à 3000€ pour les autres agences."
+            description: "Nos offres débutent à partir de 299€ contre 1500€ à 2000€ pour les autres agences."
         },
         {
             title: "Rendu final connu à l'avance",

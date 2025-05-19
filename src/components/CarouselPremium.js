@@ -38,7 +38,7 @@ const CarouselPremium = () => {
   }, []);
 
   const designs = [
-    { id: 1, image: premium4, demoLink: "/#/demo/premium-4", reserveLink: "https://book.stripe.com/cN23eP8e8aLM1z23cj", isReserved: false, category: "Premium" },
+    { id: 1, image: premium4, demoLink: "/#/demo/premium-4", reserveLink: "https://book.stripe.com/bIY2aL8e8bPQ1z2cMM", isReserved: false, category: "Premium" },
     { id: 2, image: premium2, demoLink: "/#/demo/premium-2", reserveLink: "https://book.stripe.com/fZe2aL3XS7zA91u5kl", isReserved: false, category: "Premium" },
     { id: 3, image: reserved3, demoLink: "#", reserveLink: "#", isReserved: true, category: "Standard" },
     { id: 4, image: premium5, demoLink: "/#/demo/premium-5", reserveLink: "https://book.stripe.com/7sIdTt7a4f227Xq146", isReserved: false, category: "Premium" },

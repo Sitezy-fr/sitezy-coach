@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import emilie from "../images/Emilie.jpg";
 import seb from "../images/Seb.jpg";
 import tess from "../images/Tess.jpg";
 import antoine from "../images/Antoine.jpg";
@@ -13,9 +12,8 @@ const Team = () => {
     { id: 2, name: "Fabien", position: "Chef de projet", image: fabien, description: "#fautquonteste #onpeutfaireça? #lapêche? #lamer<3" },
     { id: 3, name: "Guillaume", position: "Architecte IT", image: guillaume, description: "#toutestcarré #imbatman #athlete #mentaldacier #geek #vivelamontagne" },
     { id: 4, name: "Victoria", position: "Webdesigner & Graphiste", image: victoria, description: "#lartestpartout #challengeaccepted #jungle #elleestouTess?" },
-    { id: 5, name: "Émilie", position: "Chargé de projet digital", image: emilie, description: "#okgo #cestdejafait #timidemaisleader #discretemaisefficace" },
-    { id: 6, name: "Seb", position: "Developpeur junior", image: seb, description: "#jadorelecode #lovejavascript #basecremeourien #japon" },
-    { id: 7, name: "Tess", position: "Égérie Sitezy", image: tess, description: "#jesuisuneprincesse #etjelesais #sheldon #monsieurporc" },
+    { id: 5, name: "Seb", position: "Developpeur junior", image: seb, description: "#jadorelecode #lovejavascript #basecremeourien #japon" },
+    { id: 6, name: "Tess", position: "Égérie Sitezy", image: tess, description: "#jesuisuneprincesse #etjelesais #sheldon #monsieurporc" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
