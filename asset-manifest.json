@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.564f3e4c.css",
-    "main.js": "/static/js/main.c4d69388.js",
+    "main.js": "/static/js/main.bdfead6d.js",
     "static/js/453.a4afd10d.chunk.js": "/static/js/453.a4afd10d.chunk.js",
     "static/media/back.png": "/static/media/back.3cdf66ac1a5ad81912e5.png",
     "static/media/bg-corde.png": "/static/media/bg-corde.23ab9a19255b25560f0e.png",
@@ -54,7 +54,6 @@
     "static/media/parallax.jpg": "/static/media/parallax.8a9c21eb0290517781be.jpg",
     "static/media/Victoria.jpg": "/static/media/Victoria.be8eded4f4024fa4dc5f.jpg",
     "static/media/logo-muscu.png": "/static/media/logo-muscu.0db750a9bbcfd44cbb5c.png",
-    "static/media/Emilie.jpg": "/static/media/Emilie.59c76f18e0eb1c6d8afb.jpg",
     "static/media/couronne.png": "/static/media/couronne.e4767bdd30311da3683b.png",
     "static/media/endurance.jpg": "/static/media/endurance.ef962306bbe9c6078c05.jpg",
     "static/media/Guillaume.jpg": "/static/media/Guillaume.f2e44c86906390273a8c.jpg",
@@ -106,11 +105,11 @@
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
     "main.564f3e4c.css.map": "/static/css/main.564f3e4c.css.map",
-    "main.c4d69388.js.map": "/static/js/main.c4d69388.js.map",
+    "main.bdfead6d.js.map": "/static/js/main.bdfead6d.js.map",
     "453.a4afd10d.chunk.js.map": "/static/js/453.a4afd10d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.564f3e4c.css",
-    "static/js/main.c4d69388.js"
+    "static/js/main.bdfead6d.js"
   ]
 }
